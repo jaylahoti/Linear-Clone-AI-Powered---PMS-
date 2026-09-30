@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200..1000&display=swap');
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-regal-dark: #101010;
+  --color-regal-light: #fcfcfc;
+}
+
+:root {
+  font-family: "Nunito", sans-serif;
+  color-scheme: light dark;
+  font-size: 14px;
+
+  --bg: var(--color-regal-light);
+  --fg: var(--color-regal-dark);
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+}
+
+
+.dark body {
+  --bg: var(--color-regal-dark);
+  --fg: var(--color-regal-light);
+}
+
+@layer utilities {
+  .border-theme {
+    @apply border-[#e7e7e7] dark:border-[#1a1c1e];
+  }
+}
